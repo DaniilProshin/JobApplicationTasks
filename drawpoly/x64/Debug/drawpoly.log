@@ -1,0 +1,8 @@
+﻿  drawpoly.cpp
+C:\Users\Daniil Proshin\Desktop\drawpoly\drawpoly.cpp(16,14): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Daniil Proshin\Desktop\drawpoly\drawpoly.cpp(23,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Daniil Proshin\Desktop\drawpoly\drawpoly.cpp(34,12): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil Proshin\Desktop\drawpoly\drawpoly.cpp(35,12): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil Proshin\Desktop\drawpoly\drawpoly.cpp(44,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil Proshin\Desktop\drawpoly\drawpoly.cpp(45,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  drawpoly.vcxproj -> C:\Users\Daniil Proshin\Desktop\drawpoly\x64\Debug\drawpoly.exe
