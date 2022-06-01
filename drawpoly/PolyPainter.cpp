@@ -22,7 +22,7 @@ void PolyPainter::setLines(std::vector<std::pair<cv::Point, cv::Point>> lines)
 	m_lines = lines;
 }
 
-void PolyPainter::show()
+void PolyPainter::show() const
 {
 	int thickness = 2;
 	int lineType =cv::LINE_8;

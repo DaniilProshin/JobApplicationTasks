@@ -67,7 +67,7 @@ public:
 	
 	
 	}
-	void show()
+	void show() const
 	{
 		int thickness = 2;
 		int lineType = 8;

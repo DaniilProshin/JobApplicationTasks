@@ -9,7 +9,7 @@ public:
 	PolyPainter();
 	PolyPainter(cv::Mat image, std::vector<std::pair<cv::Point, cv::Point>> lines);
 
-	void show();
+	void show() const;
 	void setBackground(cv::Mat image);
 	void setLines(std::vector<std::pair<cv::Point, cv::Point>> lines);
 
