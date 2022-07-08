@@ -42,5 +42,6 @@ int main(int argc, char* argv[])
 	Enc.decryptLoginAndPassword();
 	
 	Enc.accordanceCheck();
-
+	
+	system("pause");
 }
