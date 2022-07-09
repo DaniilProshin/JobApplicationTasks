@@ -34,25 +34,9 @@ int main(int argc, char* argv[])
 	try
 	{
 		std::getline(std::cin, login);
-	}
-	catch (const Exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return 0;
-	}
-	std::cout << "Enter your password:" << std::endl;
-	try
-	{
+		std::cout << "Enter your password:" << std::endl;
 		std::getline(std::cin, password);
-	}
-	catch (const Exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return 0;
-	}
-	std::cout << "Enter desirable key length:" << std::endl;
-	try
-	{
+		std::cout << "Enter desirable key length:" << std::endl;
 		std::cin >> keylength;
 	}
 	catch (const Exception& e)
