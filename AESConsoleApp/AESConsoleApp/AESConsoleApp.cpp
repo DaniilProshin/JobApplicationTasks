@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <signal.h>
 
 #include"AccEncrypter.h"
 
@@ -19,18 +19,48 @@
 //user input: login, password, key length
 //program output: correctness of input, input, encrypted input and ecnrypted result match
 
+void signal_callback_handler(int signum);
+
+
 int main(int argc, char* argv[])
 {
 	string login;
 	string password;
 	unsigned int keylength;
 
+	signal(SIGINT, signal_callback_handler);
+
 	std::cout << "Enter your login: " << std::endl;
-	std::cin >> login;;
+	try
+	{
+		std::getline(std::cin, login);
+	}
+	catch (const Exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 0;
+	}
 	std::cout << "Enter your password:" << std::endl;
-	std::cin >> password;
+	try
+	{
+		std::getline(std::cin, password);
+	}
+	catch (const Exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 0;
+	}
 	std::cout << "Enter desirable key length:" << std::endl;
-	std::cin >> keylength;
+	try
+	{
+		std::cin >> keylength;
+	}
+	catch (const Exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 0;
+	}
+
 
 	AccEncrypter Enc(login,password,keylength);
 
@@ -44,4 +74,10 @@ int main(int argc, char* argv[])
 	Enc.accordanceCheck();
 	
 	system("pause");
+}
+
+
+void signal_callback_handler(int signum) {
+	std::cout << "Caught Ctrl+C signal: terminating" << signum << std::endl;
+	exit(1);
 }
