@@ -4,9 +4,12 @@
 #include <string>
 using std::string; // Its probably a bad design in bigger project with more dependencies but it makes code cleaner
 
+
 #define GET_VARIABLE_NAME(Variable) (#Variable)
 #define MAXKEYLENGTH 32
 #define MINKEYLENGTH 16
+
+
 
 class AccManager
 {
@@ -18,10 +21,12 @@ public:
 
 	AccManager(string mlogin, string mpassword, unsigned int mkey_length)
 	{
-		setLogin(mlogin);
-		setPassword(mpassword);
-		setKeyLength(mkey_length);
+		incorrectInputHandle(setLogin(mlogin));
+		incorrectInputHandle(setPassword(mpassword));
+		incorrectInputHandle(setKeyLength(mkey_length));
 	}
+
+	void incorrectInputHandle(bool minput) const;
 
 	bool setLogin(string mlogin);
 	bool setPassword(string mpassword);

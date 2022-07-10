@@ -42,6 +42,7 @@ int main(int argc, char* argv[])
 	catch (const Exception& e)
 	{
 		std::cerr << e.what() << std::endl;
+		system("pause");
 		return 0;
 	}
 

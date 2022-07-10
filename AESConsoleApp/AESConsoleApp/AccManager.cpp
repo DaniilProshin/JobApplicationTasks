@@ -10,7 +10,7 @@ bool AccManager::setLogin(string mlogin)
 	}
 	else
 	{
-		std::cout << "Login is in incorrect format." << std::endl;
+		std::cout << "Login is in incorrect format(spaces and empty string are forbidden)." << std::endl;
 		return false;
 	}
 }
@@ -25,7 +25,7 @@ bool AccManager::setPassword(string mpassword)
 	}
 	else 
 	{
-		std::cout << "Password is in incorrect format." << std::endl;
+		std::cout << "Password is in incorrect format(spaces and empty string are forbidden." << std::endl;
 		return false;
 	}	
 }
@@ -48,7 +48,7 @@ bool AccManager::setKeyLength(unsigned int mkey_length)
 bool AccManager::checkForCorrectPassword(string mpassword) 
 {
 	
-	if (mpassword.empty())// I coulndt come up with what else to check
+	if (mpassword.empty() || mpassword.find(' ') != std::string::npos)// I coulndt come up with what else to check
 	{
 		return false;
 	}
@@ -57,7 +57,7 @@ bool AccManager::checkForCorrectPassword(string mpassword)
 
 bool AccManager::checkForCorrectLogin(string mlogin) 
 {
-	if (mlogin.empty())// I coulndt come up with what else to check
+	if (mlogin.empty() || mlogin.find(' ') != std::string::npos)// I coulndt come up with what else to check
 	{
 		return false;
 	}
@@ -67,4 +67,14 @@ bool AccManager::checkForCorrectLogin(string mlogin)
 void AccManager::printInfo(string val,string valname) const
 {
 	std::cout << "Your " << valname << " is " << val<< std::endl;
+}
+
+void AccManager::incorrectInputHandle(bool minput) const
+{
+	if (!minput)
+	{
+		std::cout << "Your input is wrong: restart .exe and try again" << std::endl;
+		system("pause");
+		exit(1);
+	}
 }
